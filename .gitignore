@@ -1,0 +1,6 @@
+*.csv
+*.pyc
+embeddings/*
+data/*
+dump/*
+
