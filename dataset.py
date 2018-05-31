@@ -1,3 +1,5 @@
+# @author: Erryan Sazany
+
 import pandas as pd
 
 
@@ -13,7 +15,21 @@ class Dataset:
         # print(train_set.head(5))
 
     def cleanse_dataset(self):
-        # buang punctuation
+        # buang hyperlink
+        self.train_set['text'] = self.train_set['text'].str.replace(
+            r'http[s]*\:\/\/[a-zA-Z0-9\`\-\=\~\!\@\#\$\%\^\&\*\(\_\+\[\]\{\}\\\|\;\'\:\"\,\.\/\<\>\?]* ', ''
+        )
+        self.train_set['text'] = self.train_set['text'].str.replace(
+            r'pic\.twitter\.com\.\/[a-zA-Z0-9\`\-\=\~\!\@\#\$\%\^\&\*\(\_\+\[\]\{\}\\\|\;\'\:\"\,\.\/\<\>\?]* ', ''
+        )
+        self.train_set['text'] = self.train_set['text'].str.replace(
+            r'bit\.ly\/[a-zA-Z0-9\`\-\=\~\!\@\#\$\%\^\&\*\(\_\+\[\]\{\}\\\|\;\'\:\"\,\.\/\<\>\?]* ', ''
+        )
+        self.train_set['text'] = self.train_set['text'].str.replace(
+            r't\.co\/[a-zA-Z0-9\`\-\=\~\!\@\#\$\%\^\&\*\(\_\+\[\]\{\}\\\|\;\'\:\"\,\.\/\<\>\?]* ', ''
+        )
+
+        # buang punctuation tersisa
         self.train_set['text'] = self.train_set['text'].str.replace(r'[\`\-\=]', '')
         self.train_set['text'] = self.train_set['text'].str.replace(r'[\~\!\@\#\$\%\^\&\*\(\_\+]', '')
         self.train_set['text'] = self.train_set['text'].str.replace(r'[\[\]\{\}\\\|\;\'\:\"\,\.\/\<\>\?]', '')

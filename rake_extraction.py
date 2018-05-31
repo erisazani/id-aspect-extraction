@@ -1,3 +1,4 @@
+# @modified_by: Erryan Sazany
 # Sourced with modification from: http://sujitpal.blogspot.co.id/2013/03/implementing-rake-algorithm-with-nltk.html
 
 # Adapted from: github.com/aneesha/RAKE/rake.py

@@ -1,3 +1,5 @@
+# @author: Erryan Sazany
+
 import pandas as pd
 from aspect_category import Aspects
 

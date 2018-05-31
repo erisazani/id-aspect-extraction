@@ -1,3 +1,5 @@
+# @author: Erryan Sazany
+
 from scipy import spatial
 
 
